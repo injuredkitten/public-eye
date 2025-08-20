@@ -1,0 +1,8 @@
+dev-aliyun:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    host: 47.121.177.139
+    port: 3306
+    database: public_eye
+    username: dev
+    password: zh1319716110

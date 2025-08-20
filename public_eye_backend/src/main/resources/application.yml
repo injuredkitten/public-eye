@@ -1,0 +1,97 @@
+server:
+  port: 8080
+
+#spring:
+#  profiles:
+#    active: dev
+#  main:
+#    allow-circular-references: true
+#  datasource:
+#    druid:
+#      driver-class-name: ${sky.datasource.driver-class-name}
+#      url: jdbc:mysql://${sky.datasource.host}:${sky.datasource.port}/${sky.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+#      username: ${sky.datasource.username}
+#      password: ${sky.datasource.password}
+#
+mybatis-plus:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: cn.edu.xmu.domain.po
+  configuration:
+    #开启驼峰命名
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com:
+      sky:
+        mapper: debug
+        service: info
+        controller: info
+
+rainbow:
+  jwt:
+    location: classpath:rainbow.jks
+    alias: rainbow
+    password: rainbow123
+    tokenTTL: 30m
+
+
+spring:
+  application:
+    name: public-eye
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${dev-aliyun.datasource.host}:${dev-aliyun.datasource.port}/${dev-aliyun.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: ${dev-aliyun.datasource.username}
+    password: ${dev-aliyun.datasource.password}
+  data:
+    # redis配置
+    redis:
+      # Redis服务器地址
+      host: 1.92.159.40
+      database: 0
+      # Redis服务器连接端口
+      port: 7001
+      # Redis服务器连接密码（默认为空）
+      password: zh1319716110
+      # 连接超时时间
+      timeout: 10s
+      lettuce:
+        pool:
+          # 连接池最大连接数
+          max-active: 200
+          # 连接池最大阻塞等待时间（使用负值表示没有限制）
+          max-wait: -1ms
+          # 连接池中的最大空闲连接
+          max-idle: 10
+          # 连接池中的最小空闲连接
+          min-idle: 0
+knife4j:
+  enable: true
+  openapi:
+    title: 天眼接口文档
+    description: "天眼接口文档"
+    email: xxxxx@qq.com
+    concat: baleines
+    url: https://codemeleon.asia
+    version: v1.0.0
+    group:
+      default:
+        group-name: default
+        api-rule: package
+        api-rule-resources:
+          - cn.edu.xmu.controller
+elasticsearch:
+  #多个IP逗号隔开:集群时用到
+  #hosts: 127.0.0.1:9201,127.0.0.1:9202,127.0.0.1:9203
+  hosts: 1.92.94.117:9200
+  username: elastic
+  password: IAmFarmer
+  apikey:
+  # 本地配置
+  host: 1.92.94.117
+  port: 9200
+
