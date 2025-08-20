@@ -1,13 +1,3 @@
-{
-  "tag": {
-    "mutable": false,
-    "unk_token": "B",
-    "pad_token": null,
-    "idx_to_token": [
-      "B",
-      "E",
-      "S",
-      "M"
-    ]
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d4b321dd085d6114cd82c28cb994f4e396c353ead60ee4ee210cbf5919f9465d
+size 156
